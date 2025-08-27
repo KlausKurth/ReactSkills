@@ -12,7 +12,30 @@ Este repositório tem como objetivo documentar o uso eficiente de funcionalidade
 npm create vite@latest my-react-app -- --template react
 cd my-react-app
 npm install
+```
+
+
+## 📦 Executando projeto modo DEV
+
+```bash
 npm run dev
+```
+
+## 📦 Executando projeto modo PROD
+
+```bash
+npm run build
+npm run preview
+```
+
+
+---
+
+
+## 📦 instalando dependências projeto com NPM
+
+```bash
+npm install react-router-dom
 ```
 
 
@@ -36,30 +59,27 @@ npm run dev
 ### 🧾 formas de criar componentes
 
 ```jsx
-// Forma com arrow function (mais usada)
-const Welcome = () => <h2>Bem-vindo!</h2>;
+// Forma com arrow function (mais usada) atalho VsCode -> 'rfcae'
+import React from 'react'
+
+const Hello = () => {
+  return (
+    <div>Olá</div>
+  )
+}
+
+export default NavBar
 ```
 
 ```jsx
 // Forma com função comum
+import React from 'react'
+
 function Hello() {
   return <h2>Olá!</h2>;
 }
-```
 
----
-
-
-### 🧾 formas de export componentes
-
-```jsx
-// export default => pode dar o nome que quiser ao importar
-export default function Main() {}
-```
-
-```jsx
-// export nomeado => precisa usar o mesmo nome
-export const Header = () => {};
+export { Hello };
 ```
 
 

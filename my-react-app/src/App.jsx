@@ -1,18 +1,24 @@
+//React
 import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-//components 
+//Components 
 import ListExample1 from './components/List/ListExample1'
+import NavBar from './components/NavBar';
+import HookUseEffect from './components/Hooks/HookUseEffect';
+
 
 const App = () => {
 
   return(
-    <>
-      {/* ListExample1: titulo é um valor passado pelo Props */}
-      <ListExample1 titulo="Minha Lista de tarefas">
-        {/* ListExample1: P e tudo de baixo do componente Test é considerado children */}
-        <p>Tarefas do dia:</p>
-      </ListExample1>
-    </>
+    <BrowserRouter>      
+      <NavBar/>     
+      <Routes>
+        {/* Em ListExample1 titulo é um valor passado pelo Props */}
+        <Route path="/listexemple1" element={<ListExample1 titulo="Minha lista de tarefas"/>}/>
+        <Route path="/hookuseeffect" element={<HookUseEffect/>}/>
+      </Routes>       
+    </BrowserRouter>
   );
 };
 
