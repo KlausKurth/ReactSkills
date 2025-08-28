@@ -85,103 +85,19 @@ export { Hello };
 
 ---
 
-### 🧬 Props e Children
+# Renderização vs execução de função
+
+- Sempre que o state ou props de um componente muda, React executa a função do componente novamente.
+
+- Cada execução da função do componente é uma nova renderização, e todo o código dentro da função é reexecutado.
+
+- Isso não significa que tudo dentro dele foi alterado no DOM. React atualiza apenas o que precisa.
 
 
-```jsx
-//App.jsx
-import React from 'react';
-import Test from './components/Test'
+# Criação vs execução de funções dentro do componente
 
-const App = () => {
+- Toda função definida dentro do componente é recriada a cada renderização
 
-  return(
-    <>
-      {/*titulo é um valor passado pelo Props */}
-      <Test titulo="Minha Lista de tarefas">
-        {/* P e tudo de baixo do componente Test é considerado children */}
-        <p>Tarefas do dia:</p>
-      </Test>
-    </>
-  );
-};
+- Criação: a cada render, React cria uma nova referência da função minhaFunc.
 
-export default App;
-```
-
-```jsx
-//Test.jsx (componente)
-import React, { useState } from "react";
-
-//argumento esperado a receber valor de props de App.jsx
-const Test = (props) => {
-    return (
-        <>
-            {/*Valor do componente trazido de props de Test em App.jsx*/}
-            <h1>{props.titulo}</h1>
-            {/*Trazendo todo conteúdo children de App.jsx herdado em Test*/}
-            <p>{props.children}</p>
-        </>
-    );
-};
-
-export default Test;
-```
-
-
---- 
-
-
-### 🆔 useId
-
-### 📌 O que é?
-
-`useId` Gera um ID estável que pode ser usado para acessibilidade ou associação de rótulos.
-
-### ✅ Uso Correto
-
-```jsx
-import { useId } from "react";
-
-function Form() {
-  const id = useId();
-
-  return (
-    <>
-      <label htmlFor={id}>Nome</label>
-      <input id={id} type="text" />
-    </>
-  );
-}
-```
-
-### 🔍 Ideal quando você gera múltiplos inputs dinamicamente e precisa de um id único que persista entre renderizações.
-
-
----
-
-
-### 📦 useParams (React Router)
-
-### 📌 O que é?
-
-`useParams` Permite acessar os parâmetros da URL.
-
-### ✅ Uso Correto
-
-```jsx
-import { useParams } from 'react-router-dom';
-
-function Profile() {
-  const { id } = useParams(); // Ex: /profile/123
-
-  return <div>Perfil de ID: {id}</div>;
-}
-```
-
-### 🚀 Útil em rotas dinâmicas como /profile/:id.
-
-
-
-
----
+- Execução: só acontece se você executa de alguma forma a função um exemplo é ao clicar no botão.

@@ -9,10 +9,12 @@ import HookUseEffect from './components/Hooks/HookUseEffect';
 import HookUseStateInputs from './components/Hooks/HookUseStateInputs';
 import HookUseReducer from './components/Hooks/HookUseReducer';
 import HookUseContext from './components/Hooks/HookUseContext';
+import HookUseRef from './components/Hooks/HookUseRef';
+import HookUseCallback from './components/Hooks/HookUseCallback';
+import HookUseMemo from './components/Hooks/HookUseMemo';
 
 //context
 import UsuarioProvider from './components/Hooks/UsuarioContext'; //import nomeado porque só pode haver um default por arquivo
-import HookUseRef from './components/Hooks/HookUseRef';
 
 
 const App = () => {
@@ -31,7 +33,9 @@ const App = () => {
           <Route path="/hookusereducer" element={<HookUseReducer/>}/>
           {/*React pega <HookUseContext /> e passa como children para o componente UsuarioProvider */}       
           <Route path="/hookusecontext" element={<HookUseContext/>}/>
-          <Route path="/hookuseref" element={<HookUseRef/>}/>        
+          <Route path="/hookuseref" element={<HookUseRef/>}/>
+          <Route path="/hookusecallback" element={<HookUseCallback/>}/>
+          <Route path="/hookusememo" element={<HookUseMemo/>}/>        
         </Routes>
       </UsuarioProvider>       
     </BrowserRouter>
