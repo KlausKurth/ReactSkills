@@ -1,3 +1,5 @@
+//useEffect gerencia efeitos colaterais (fetch, timers, manipulação do DOM). Ele roda depois da renderização. Pode rodar sempre, uma vez, ou com dependências específicas.
+
 import React, { useEffect, useState } from 'react'
 
 function HookUseEffect() {
