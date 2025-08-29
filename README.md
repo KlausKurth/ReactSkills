@@ -101,3 +101,28 @@ export { Hello };
 - Criação: a cada render, React cria uma nova referência da função minhaFunc.
 
 - Execução: só acontece se você executa de alguma forma a função um exemplo é ao clicar no botão.
+
+
+# Diferença entre Effects
+
+1 - useEffect
+
+- Executa depois que a tela já foi renderizada.
+
+- O usuário pode ver o "estado antigo" por um instante antes da atualização.
+
+2 - useLayoutEffect
+
+- Executa logo depois do React montar/atualizar o DOM, mas antes do browser pintar na tela.
+
+- Garantia: o usuário nunca vê a tela sem a alteração feita no hook.
+
+- Usado para medir ou ajustar layout (ex: largura, altura, posição).
+
+3 - useInsertionEffect
+
+- Executa ainda antes do useLayoutEffect, durante a fase de inserção de estilos.
+
+- Serve para injeção de CSS ou estilos dinâmicos com bibliotecas (ex: styled-components, emotion).
+
+- Não é para manipular DOM manualmente, e sim para garantir que estilos estejam aplicados antes do layout.

@@ -13,12 +13,14 @@ import HookUseRef from './components/Hooks/HookUseRef';
 import HookUseCallback from './components/Hooks/HookUseCallback';
 import HookUseMemo from './components/Hooks/HookUseMemo';
 import HookUseLayoutEffect from './components/Hooks/HookUseLayoutEffect';
-
+import HookUseImperativeHandle from './components/Hooks/HookUseImperativeHandle';
+import HookUseId from './components/Hooks/HookUseId';
 
 //context
 import UsuarioProvider from './components/Hooks/UsuarioContext'; //import nomeado porque só pode haver um default por arquivo
-import HookUseImperativeHandle from './components/Hooks/HookUseImperativeHandle';
-
+import HookUseTransition from './components/Hooks/HookUseTransition';
+import HookUseDeferredValue from './components/Hooks/HookUseDeferredValue';
+import HookUseInsertionEffect from './components/Hooks/HookUseInsertionEffect';
 
 
 const App = () => {
@@ -41,7 +43,11 @@ const App = () => {
           <Route path="/hookusecallback" element={<HookUseCallback/>}/>
           <Route path="/hookusememo" element={<HookUseMemo/>}/>
           <Route path="/hookuselayouteffect" element={<HookUseLayoutEffect/>}/>
-          <Route path="/hookuseimperativehandle" element={<HookUseImperativeHandle/>}/>        
+          <Route path="/hookuseimperativehandle" element={<HookUseImperativeHandle/>}/>
+          <Route path="/hookuseid" element={<HookUseId/>}/>
+          <Route path="/hookusetransition" element={<HookUseTransition/>}/>
+          <Route path="/hookusedferredvalue" element={<HookUseDeferredValue/>}/>
+          <Route path="/hookuseinsertioneffect" element={<HookUseInsertionEffect/>}/>       
         </Routes>
       </UsuarioProvider>       
     </BrowserRouter>
