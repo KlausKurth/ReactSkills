@@ -21,6 +21,7 @@ import UsuarioProvider from './components/Hooks/UsuarioContext'; //import nomead
 import HookUseTransition from './components/Hooks/HookUseTransition';
 import HookUseDeferredValue from './components/Hooks/HookUseDeferredValue';
 import HookUseInsertionEffect from './components/Hooks/HookUseInsertionEffect';
+import HookUseParams from './components/Hooks/HookUseParams';
 
 
 const App = () => {
@@ -47,7 +48,9 @@ const App = () => {
           <Route path="/hookuseid" element={<HookUseId/>}/>
           <Route path="/hookusetransition" element={<HookUseTransition/>}/>
           <Route path="/hookusedferredvalue" element={<HookUseDeferredValue/>}/>
-          <Route path="/hookuseinsertioneffect" element={<HookUseInsertionEffect/>}/>       
+          <Route path="/hookuseinsertioneffect" element={<HookUseInsertionEffect/>}/>
+          {/* Parâmetros dinâmicos na URL */}
+          <Route path="/item/:id/:nome" element={<HookUseParams/>}/>       
         </Routes>
       </UsuarioProvider>       
     </BrowserRouter>
